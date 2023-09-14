@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/여닫이 navbar.css">
+    <script src="https://kit.fontawesome.com/3a4a7cf7f7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <nav class="ani_sidebar ani_sb">
+        <div>
+            <i class="fa-solid fa-house"></i>
+            <a>home</a>
+            <button class="btn-icon" onclick="rlNav('translateX(-140px)')" >
+                <i class="fa-solid fa-x"></i>
+            </button>
+        </div>
+        <div>
+            <i class="fa-solid fa-image"></i>
+            <a id="tname">image</a>
+        </div>
+        <div>
+            <i class="fa-brands fa-github"></i>
+            <a>git_hub</a>
+        </div>
+        <div>
+            <i class="fa-brands fa-discord"></i>
+            <a>discord</a>
+        </div>
+    </nav>
+
+    <button class="btn"  onclick="rlNav('translateX(0px)')">열기</button>
+
+    <script>
+        function rlNav(opcl){
+           document.getElementsByClassName('ani_sb')[0].style.transform = opcl;
+        }
+    </script>
+</body>
+</html>
