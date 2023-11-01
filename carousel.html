@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/carousel.css" rel="stylesheet">
+</head>
+<body>
+    <div style="overflow: hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="./image,video/car1.png">
+            </div>
+            <div class="slide-box">
+                <img src="./image,video/car2.png">
+            </div>
+            <div class="slide-box">
+                <img src="./image,video/car3.png">
+            </div>
+        </div>
+    </div>
+    <button class="next">다음</button>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        var 현재사진 = 0;
+        var 이미지수 = $('.slide-box').length;
+    
+        $('.next').on('click', function() {
+            현재사진++;
+            if (현재사진 >= 이미지수) {
+                현재사진 = 0;
+            }
+            var 이동거리 = 현재사진 * 100;
+            $('.slide-container').css('transform', 'translateX(-' + 이동거리 + 'vw)');
+        });
+    </script>
+</body>
+</html>
