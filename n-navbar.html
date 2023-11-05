@@ -14,18 +14,16 @@
         <h4>로그인하세요</h4>
         <form action="success.html">
           <div class="my-3">
-            <input type="text" class="form-control" id="email">
+            <input type="text" class="form-control shadow" id="email">
            </div>
            <div class="my-3">
-             <input type="password" class="form-control" id="ps">
+             <input type="password" class="form-control shadow" id="ps">
            </div>
            <button type="submit" class="btn btn-primary" id="send">전송</button>
            <button type="button" class="btn btn-danger" id="close">닫기</button>
         </form>
       </div>
     </div> 
-
-
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -48,12 +46,20 @@
       
 
       <div class="main-bg">
-        <h4>Shirts on Sale</h4>
-        <button id="test-btn" class="btn btn-danger">로그인</button>
+        <div class="content">
+          <h4>Shirts on Sale</h4>
+          <button id="test-btn" class="btn btn-danger">로그인</button>
+        </div>
       </div>
 
       <div class="alert alert-danger">
         <span id="sec">5</span>초이내 구매시 사은품 증정!(<span id="sec">5</span>초뒤에 사라짐!!)
+      </div>
+
+      <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas 
+        voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, 
+        excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
       </div>
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -87,6 +93,7 @@
           alert("이메일 입력하셈");
           e.preventDefault();
         }
+        /*정규식 (로그인 비번 검사)*/
         else if(!/\S+@\S+\.\S+/.test(check_email)){
           alert("올바른 이메일 형식으로 입력하셈");
           e.preventDefault();
@@ -100,7 +107,7 @@
           e.preventDefault();
         }
       });
-        /*정규식 (로그인 비번 검사)*/
+        
 
 
         /*단어 바꾸기*/
@@ -140,6 +147,53 @@
             current++;
           }
         },5000);
+
+        $(window).on('scroll',function(){
+          if(window.scrollY> 100){
+            $('.navbar-brand').css('font-size','20px');
+          }
+          else{
+            $('.navbar-brand').css('font-size','');
+          }
+        });
+
+        $('.lorem').on('scroll' , function(){
+          var 스크롤양 = document.querySelector('.lorem').scrollTop;
+          var div높이 = document.querySelector('.lorem').scrollHeight;
+          var 높이 = document.querySelector('.lorem').clientHeight;
+          if(스크롤양+높이 === div높이){
+            alert('이야 너 쥑인다');
+          }
+        })
+        
+
+
+      
+        // $(window).on('scroll' , function(){
+        //   $(window).scrollTop();
+        // })
+
+        // 스크롤 애니메이션 
+        // window.addEventListener('scroll',function(){
+        //   window.scrollTo(0,100);
+        // })
+
+        // 부가세 구하기2
+        // function dc(a , b){
+        //   var num = (a*0.9).toFixed(2);
+        //   if (b === true){
+        //   a-=num-1.5;
+        // }
+        //   return parseFloat(num);
+        // }
+        
+
+        // 부가세 구하기 
+        // function vat(a){
+        //   var num = (a * 1.1).toFixed(0);
+        //   return parseFloat(num);
+        // }
+        // console.log(vat(55555));
       </script>
   </body>
 </html>

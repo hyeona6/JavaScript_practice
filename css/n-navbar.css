@@ -1,3 +1,13 @@
+body{
+  width: 100%;
+  height: 2000px;
+  margin: 0;
+  padding: 0;
+}
+:root{
+  scroll-behavior: auto;
+}
+
 /*모달창*/
 .black-bg {
     width : 100%;
@@ -19,7 +29,19 @@
     visibility: visible;
     transform: translateY(0%);
 }
-  /*메인*/
+
+/*메인*/
+
+.navbar{
+  position: fixed;
+  width: 100%;
+  height: auto;
+  z-index: 5;
+}
+.navbar-brand{
+  font-size: 30px;
+  transition : all 1s;
+}
 
 .list-group{
     display: none;
@@ -31,5 +53,9 @@
   width: 100%;
   height: 300px;
   background-color: #ccc;
-  
+  display: flex;
+  align-items: center;
+}
+.content{
+  margin-left: 30px;
 }
