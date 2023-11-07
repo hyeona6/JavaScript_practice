@@ -1,3 +1,4 @@
+/* navbar크기 줄어들기 */
 $(window).on('scroll', function() {
   if (window.scrollY > 250) {
     $('.navbar').addClass('scroll-ani');
@@ -6,7 +7,7 @@ $(window).on('scroll', function() {
   }
 });
 
-
+/* 한칸씩 내려가기 */
 window.onload = function(){
     const elm = document.querySelectorAll('.section');
     const elmCount = elm.length;
@@ -48,3 +49,23 @@ window.onload = function(){
       });
     });
   }
+
+
+/* 뒤집기 카드 */  
+document.addEventListener("DOMContentLoaded", function() {
+const flip = document.querySelector('.flip-button');
+flip.addEventListener("click", flipper)
+  
+  function flipper (event) {
+    const target = document.querySelector('.section3-flip');
+    target.style.transform = "rotateY(180deg)"
+    target.addEventListener('click',reflipper);
+  }
+  
+  function reflipper(event){
+    const target = document.querySelector('close-button');
+    target.style.transform = "rotateY(0deg)"
+    target.addEventListener('click',flipper)
+    target.removeEventListener('click',flipper)
+  }
+});

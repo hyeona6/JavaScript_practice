@@ -35,7 +35,6 @@ body{
     padding: 0;
 }
 
-
 /* 애니메이션 시간초 */
 .navbar , .navbar-brand , .collapse , .navbar-nav{
     transition-duration: 0.8s;
@@ -109,6 +108,7 @@ body{
     margin-top: 20px;
     color: white;
 }
+
 /* section2 */
 .section2-content{
     height: 100vh;
@@ -143,4 +143,60 @@ body{
 .section2-right-content-word{
     @include wd-he(100%,40%);
     @include word-style('KCCChassam',20px);
+}
+
+/* section3 */
+
+.section3-content{
+    height: 100vh;
+    padding: 10vh 0vh 0vh 0vh;
+}
+.section3-inner-content{
+    @include wd-he(80%,80%);
+    @include df(center);
+    margin: 4% 0% 0% 10%;
+}
+.section3-inner-content-left{
+    @include wd-he(45%,100%);
+    margin-right: auto;
+}
+.section3-inner-content-right{
+    @include wd-he(45%,100%);
+    margin-left: auto;
+}
+
+.section3-flip{
+    @include wd-he(100%,100%);
+    perspective: 1100px;
+    position: relative;
+    transition: 0.4s;
+    transform-style: preserve-3d;
+}
+.section3-flip> img{
+    @include wd-he(100%,100%);
+    border-radius: 10px;
+}
+.front , .back{
+    @include wd-he(100%,100%);
+    position: absolute;
+}
+.back{
+    background: white;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.content3-word{
+    font-size: 16px;
+}
+.flip-button{
+    @include wd-he(50px,50px);
+    @include df(center);
+    position: absolute;
+    cursor: pointer;
+    border-radius: 50px;
+    background: #5dddd7;
+    margin: 10px 0px 0px 10px;
+}
+.flip-button > i{
+    font-size: 24px;
 }
