@@ -1,0 +1,68 @@
+
+.flip-outer{
+    width: 200px;
+    height: 400px;
+}
+.flip-inner{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: all 1s;
+    transform-style: preserve-3d;
+}
+.flip-inner > img{
+    width: 100%;
+    height: 100%;
+}
+.flip-inner:hover{
+    transform: rotateY(180deg);
+}
+.front{
+    width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    z-index: 1;
+}
+.back{
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    width: 100%;
+    position: absolute;
+    transform: rotateY(180deg);
+}
+
+
+
+.card-container {
+    position: relative;
+    width: 200px;
+    height: 400px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    transition: width 0.3s ease;
+}
+
+.expanded-content {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 0;
+    height: 100%;
+    background-color: lightgreen;
+    transition: width 1s ease;
+    overflow: hidden;
+}
+
+.card-container:hover .card {
+    width: 200px; 
+}
+
+.card-container:hover .expanded-content {
+    width: 400px; 
+}

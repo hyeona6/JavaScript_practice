@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'KCCChassam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCChassam.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'omyu_pretty';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TAEBAEKmilkyway';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/TAEBAEKmilkyway.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin df($justify){
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+@mixin wd-he($width , $height){
+    width: $width;
+    height: $height;
+}
+@mixin word-style($font , $size){
+    font-family: $font;
+    font-size: $size;
+}
+/* main */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 애니메이션 시간초 */
+.navbar , .navbar-brand , .collapse , .navbar-nav{
+    transition-duration: 0.8s;
+}
+
+/* scroll시 바꿀것 */
+.navbar.scroll-ani {
+    height: 55px;
+    background-color: rgba(204, 204, 204, 0.5);
+}
+.navbar.scroll-ani .navbar-brand {
+    font-size: 28px;
+}
+.navbar.scroll-ani .navbar-nav {
+    font-size: 20px;
+}
+
+/* <navbar> */
+.navbar{
+    @include wd-he(100%,65px);
+    padding: 0px 10px 0px 10px;
+    position: fixed;
+    z-index: 5;
+    background-color: rgba(204, 204, 204, 1);
+}
+.container-fluid{
+    height: 100%;
+}
+.navbar-brand{
+    @include wd-he(140px,100%);
+    @include word-style('KCCChassam',32px);
+    @include df(center);
+}
+.collapse{
+    @include wd-he(500px,auto);
+    font-family: 'KCCChassam';
+    flex-grow: 0;
+    font-size: 25px;
+    margin-right: 50px;
+}
+.nav-link{
+    color: black;
+}
+.nav-link:hover{
+    color: black;
+}
+.navbar-nav{
+    @include wd-he(100%,auto);
+    @include df(space-around);
+    gap: 20px;
+}
+
+/* main */
+.section{
+    @include wd-he(100%,100vh);
+}
+/* section1 */
+.content{
+    @include df(center);
+    text-align: center;
+}
+.section1-title{
+    @include wd-he(auto,auto);
+    @include word-style('omyu_pretty',70px);
+    margin-bottom: 0;
+    box-sizing: border-box;
+    color: white;
+}
+.section1-word{
+    @include word-style('TAEBAEKmilkyway',35px);
+    margin-top: 20px;
+    color: white;
+}
+/* section2 */
+.section2-content{
+    height: 100vh;
+    padding: 10vh 0vh 0vh 0vh;
+}
+.section2-inner-content{
+    @include wd-he(100%,90vh);
+    @include df(center);
+}
+.section2-left-content{
+    @include wd-he(50%,100%);
+    @include df(center);
+    float: left;
+}
+.section2-left-content > img{
+    @include wd-he(80%,60%);
+    margin-right: 10%;
+    border-radius: 10px;
+}
+.section2-right-content{
+    @include wd-he(50%,100%);
+    @include df(none);
+    float: right;
+}
+.sections2-right-inner-content{
+    margin-left: 30%
+}
+.section2-right-content-title{
+    @include wd-he(100%,15%);
+    @include word-style('KCCChassam',40px);
+}
+.section2-right-content-word{
+    @include wd-he(100%,40%);
+    @include word-style('KCCChassam',20px);
+}

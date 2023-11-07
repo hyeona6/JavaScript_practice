@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <link href="./css/태영.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <link href="./scss/태영.css" rel="stylesheet">
   <script src="./js/태영.js" type="text/javascript"></script>
   <title>Document</title>
 </head>
@@ -20,7 +22,10 @@
             <a class="nav-link" href="#">홈</a>
           </li>
           <li>
-            <a class="nav-link" href="#">앱</a>
+            <a class="nav-link" href="#product">소개</a>
+          </li>
+          <li>
+            <a class="nav-link" href="#">서비스</a>
           </li>
           <li>
             <a class="nav-link" href="#">문의</a>
@@ -29,18 +34,41 @@
       </div>
     </div>
   </nav>
-  
   <div class="section content" style="background-color: rgba(0, 0, 0, 0.8);">
-    <div class="main-content">
-      <div class="main-word">INNOVIX</div>
-      <div class="main2-word">Team Studio</div>
+    <div class="section1-content" data-aos="fade-up">
+      <h1 class="section1-title">이런저런걸 도전하기위해 <br>앱을 만드는</h1>
+      <div class="section1-word">우리는 INNOVIX 입니다!</div>
     </div>
   </div>
-  <div class="section" style="background-color: skyblue;">2</div>
+
+  <div class="section"  style="background-color: skyblue;">
+    <div class="section2-content">
+        <div class="section2-inner-content">
+          <div class="section2-left-content">
+            <img src="./image,video/car1.png">
+          </div>
+          <div class="section2-right-content">
+            <div class="sections2-right-inner-content">
+              <div class="section2-right-content-title">저희 이노빅스는</div>
+              <div class="section2-right-content-word">
+                이태영 바보 멍청이 똥개<br>를 활용해서 이런저런 앱을<br>
+                개발중인 이태영 바보팀<br>일걸요?<br>아마도 그럴거에요<br>
+                아니 맞아요
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
   <div class="section" style="background-color: pink;">3</div>
   <div class="section" style="background-color: palegoldenrod;">4</div>
   <div class="section" style="background-color: violet;">5</div>
     
-  
+  <script>
+    AOS.init({
+    duration: 1200,
+    once: true
+  });
+  </script>
 </body>
 </html>
